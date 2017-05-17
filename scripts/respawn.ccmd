@@ -1,0 +1,4 @@
+sv_norespawn false
+sv_forcerespawn true
+phase 1
+echo Selection Begins

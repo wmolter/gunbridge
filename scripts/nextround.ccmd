@@ -1,0 +1,1 @@
+test = $phase 2 "exec scripts/respawn.ccmd" "exec scripts/testphase1.ccmd"
