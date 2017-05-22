@@ -1,4 +1,3 @@
 sv_forcerespawn false
 sv_norespawn true
 phase = 0
-echo Round Begins
