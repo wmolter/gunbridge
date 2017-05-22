@@ -5,25 +5,20 @@ str items[NUM_ITEMS] = { "BFG9000", "Chaingun", "Pistol", "PlasmaRifle", "Rocket
 str randomItems[NUM_ITEMS];
 
 // Inefficiently randomize item array order
-script 69 ENTER
-{
-	int ctr = 0;
-	while (ctr < NUM_ITEMS)
-	{
+script 69 ENTER {
+	for (int i = 0; i < NUM_ITEMS; i++) {
 		int rand;
-		do rand = Random(0, NUM_ITEMS - 1);
-		while (items[rand] == "");
-		randomItems[ctr] = items[rand];
+		do {
+			rand = Random(0, NUM_ITEMS - 1);
+		} while (items[rand] == "");
+		randomItems[i] = items[rand];
 		items[rand] = "";
-		ctr++;
 	}
 }
 
 // Gives the player an item based on the linedef number (ldn)
-script 70 (int ldn)
-{	
-	if (ldn < 0 || ldn > NUM_ITEMS)
-	{
+script 70 (int ldn) {
+	if (ldn < 0 || ldn > NUM_ITEMS) {
 		print(s:"Error: Linedef number out of bounds.");
 		Terminate;
 	}
