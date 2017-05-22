@@ -1,1 +1,1 @@
-test = $phase 1 "exec scripts/beginround.ccmd" "echo round not over"
+test = $phase 1 "exec scripts/testready.ccmd" "echo round not over"
