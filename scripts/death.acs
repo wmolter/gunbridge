@@ -1,3 +1,9 @@
+bool trickActive = false;
+
+function void setTrickActive(bool active){
+	trickActive = active;
+}
+
 script 3 DEATH {
     int id = ActivatorTID();
     if (! (id < 1000 || id >= 1000+PlayerCount())){
@@ -7,18 +13,25 @@ script 3 DEATH {
             if(GetActorProperty(i, APROP_Health) > 0)
                 playersAlive++;
         if(playersAlive <= 1){
-			HudMessageBold(s: "End of the round."; HUDMSG_FADEOUT, 50, CR_RED, 0.5, 0.4, 1, 1);
-            SetCVar("phase", 2);
-            for(i = 0; i < PlayerCount(); i++){
-                if(GetActorProperty(PLAYER_ID_OFFSET + i, APROP_HEALTH) > 0){
-                    SetActorProperty(PLAYER_ID_OFFSET + i, APROP_HEALTH, 100);
-                    endTrick(i);
-                }
-                
-                SetUserCVar(i, "ready", 0);
-                SetActivator(PLAYER_ID_OFFSET + i);
-                ClearInventory();
-            }
+			if(trickActive){
+				HudMessageBold(s: "End of the round."; HUDMSG_FADEOUT, 50, CR_RED, 0.5, 0.4, 1, 1);
+				SetCVar("phase", 2);
+				setTrickActive(false);
+				if(playersAlive == 1){
+					for(i = 0; i < PlayerCount(); i++){
+						if(GetActorProperty(PLAYER_ID_OFFSET + i, APROP_HEALTH) > 0){
+							endTrick(i);
+							break;
+						}
+					}
+				} else {
+					endTrick(-1);
+				}
+				SetUserCVar(i, "ready", 0);
+				SetActivator(PLAYER_ID_OFFSET + i);
+				ClearInventory();
+			
+			}
         }
         Thing_ChangeTID(id, 0);
     }   
