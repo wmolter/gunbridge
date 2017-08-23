@@ -1,4 +1,6 @@
-# Doom Bridge
+# <p align="center"><img src="https://github.com/wmolter/gunbridge/blob/master/images/logo.png?raw=true" /></p>
+
+![](https://github.com/wmolter/gunbridge/blob/master/images/lobby.png?raw=true)
 
 The central premise of DOOMbridge is to provide a quick, round-based experience with the strategy of a trick-taking card-game, but within a first person shooter. Players maintain a set of weapons which are analogous to a “hand” of cards in a trick-taking game. This mechanic provides for new forms of resource management, information hiding strategies, and variance in the round-to-round gameplay of a standard free-for-all deathmatch found in an arena shooter. It also provides a source of asymmetric capability and “underdog” moments within a round or a game.
 
