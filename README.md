@@ -1,5 +1,9 @@
 # Doom Bridge
 
+The central premise of DOOMbridge is to provide a quick, round-based experience with the strategy of a trick-taking card-game, but within a first person shooter. Players maintain a set of weapons which are analogous to a “hand” of cards in a trick-taking game. This mechanic provides for new forms of resource management, information hiding strategies, and variance in the round-to-round gameplay of a standard free-for-all deathmatch found in an arena shooter. It also provides a source of asymmetric capability and “underdog” moments within a round or a game.
+
+The game takes place with four individual players managing a hand of 6 cards. The full deck of weapons in the game contains 24 cards, 6 cards of 4 different “suits”. Each suit has two weapons of a similar behavior and power level, with a weak, normal, and strong variation of each of weapon. At the beginning of each game, each player chooses 2 cards in their hand to pass to another player. At the beginning of a round, the winning player of the previous round chooses one of their remaining cards. The three other players must then pick a card in their hand of this “leading” suit, or any card in their hand if they have no card of the leading suit. Once all four players have selected a card, the shooting begins. Each player is teleported into a 4-way symmetric arena, where the final surviving player wins that round, and scores a point. At the end of the six rounds when all cards have been played, the player with the most points is crowned the victor.
+
 ## Dependencies
 
 - GZDoom (https://zdoom.org/downloads)
